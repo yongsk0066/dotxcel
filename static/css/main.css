@@ -1,0 +1,34 @@
+@import "reset.css";
+
+html, body {
+    height: 100%;
+}
+.header {
+    position:sticky;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background-color: rgb(33, 115, 70);
+    color: white;
+}
+
+.right_pannel {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc( 100% - 50px );
+    background-color: rgb(243,242,241);
+}
+
+img {
+    height: 50%;
+}
