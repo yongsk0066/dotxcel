@@ -241,6 +241,6 @@ myvenv
 README.md
 
 #img
-/img
+img/
 
-*.xlcx
+*.xlsx
