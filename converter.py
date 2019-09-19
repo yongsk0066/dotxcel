@@ -20,10 +20,12 @@ def post():
     size = int(request.form['size'])
     img_name = hashlib.md5(str(datetime.datetime.now()).encode('utf-8')).hexdigest()
     img_path = os.path.join('static/img', img_name + os.path.splitext(img.filename)[-1])
-    result_path = os.path.join('static/results', img_name + '.png')
+    # result_path = os.path.join('static/results', img_name + '.png')
     img.save(img_path)
 
     paint_exel(img_path, K=k, size=size)
+
+    os.remove(img_path)
 
     file_name = f"output.xlsx"
     return send_file(file_name)
@@ -32,4 +34,4 @@ host_addr = "localhost"
 port_num = "8080"
 
 if __name__ == '__main__':
-    app.run(host=host_addr,port=port_num)
+    app.run(host=host_addr, port=port_num)
