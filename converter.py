@@ -30,6 +30,8 @@ def post():
     file_name = f"output.xlsx"
     return send_file(file_name)
 
+host_addr = "localhost"
+port_num = "8080"
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host=host_addr, port=port_num)

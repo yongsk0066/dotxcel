@@ -22,14 +22,87 @@ html, body {
 
 .content {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    height: calc( 100% - 50px );
+    height: auto;
     background-color: rgb(243,242,241);
+    padding: 5%;
+    width: auto;
 }
 
 img {
-    height: 50%;
     width: 60%;
+    height: auto;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 22px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    border: none;
+}
+
+
+.btn:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+}
+  
+.blue {
+    background-color: #55acee;
+    box-shadow: 0px 5px 0px 0px #3C93D5;
+}
+  
+.blue:hover {
+    background-color: #6FC6FF;
+}
+
+input {
+    padding: 10px 15px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 25px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image_input {
+    background-color: white;
+}
+
+.image_form input[type="file"]{
+    border: none;
+
+}
+
+.image_form {
+    display: flex;
+    flex-direction: column;
+}
+
+@media(max-width: 584px){
+    .header {
+        font-size: 14px;
+    }
+    .quote {
+
+    }
+    .content{
+        height: calc( 95% - 50px );
+
+    }
+    img {
+        width: 100%;
+    }
 }
