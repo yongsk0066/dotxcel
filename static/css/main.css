@@ -2,6 +2,7 @@
 
 html, body {
     height: 100%;
+    width: 100%;
 }
 .header {
     position:sticky;
@@ -11,6 +12,9 @@ html, body {
     height: 50px;
     background-color: rgb(33, 115, 70);
     color: white;
+}
+.quote {
+ display: none;
 }
 
 .right_pannel {
@@ -27,13 +31,14 @@ html, body {
     flex-direction: column;
     height: auto;
     background-color: rgb(243,242,241);
-    padding: 5%;
+    /* padding: 5%; */
     width: auto;
 }
 
 img {
     width: 60%;
     height: auto;
+    margin-top: 30px;
 }
 
 .btn {
@@ -82,27 +87,87 @@ form {
 }
 
 .image_form input[type="file"]{
-    border: none;
-
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
 }
+
+.image_form label {
+    display: inline-block;
+    color: white;
+    font-size: 13px;
+    line-height: normal;
+    vertical-align: middle;
+    background-color:#55acee;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    margin-top: 30px;
+    margin-bottom: 3px;
+    border-radius: 25px;
+    box-shadow: 0px 5px 0px 0px #3C93D5;
+}
+
+.image_form label:hover {
+    background-color: #6FC6FF;
+}
+
+.image_form label:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
 
 .image_form {
     display: flex;
     flex-direction: column;
 }
 
+.upload-name {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: white;
+    padding: 10px 15px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 25px;
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
 @media(max-width: 584px){
     .header {
         font-size: 14px;
+        height: 30px;
     }
     .quote {
-
+        position:sticky;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 20px;
+        background-color: rgb(33, 115, 70);
+        color: white;
     }
     .content{
         height: calc( 95% - 50px );
-
+        width: 90%;
+        padding: 5%;
     }
     img {
         width: 100%;
     }
+}
+
+.git:hover {
+    cursor: pointer;
 }

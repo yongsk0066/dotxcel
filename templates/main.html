@@ -9,26 +9,42 @@
     <title>DOTXCEL</title>
 </head>
 <body>
+    <div class="quote">Life Is Short, Use Python</div>
     <div class="header">
-        <div class="quote">Life Is Short, Use Python</div>
         <div class="title">Dotxcel.xlsx - Excel</div>
         <div class="right_pannel">
-            <div class="git">github</div>
-            <div class="dscrp">How</div>
+            <div class="git" onclick="location.href='https://github.com/yongsk0066/dotxcel'">github</div>
+            <!-- <div class="dscrp">How</div> -->
         </div>
     </div>
     <div class="content">
         <img src="static/images/result.png" alt="">
         <form action="./" method="post" enctype="multipart/form-data">
             <div class="image_form">
-                    <label for="ex_file">Upload Image</label>
-                    <input type="file" name="image" accept='image/png,image/jpeg,image/jpg' class="image_input" id="ex_file">
+                <label for="ex_file">Upload Image</label>
+                <input type="file" name="image" accept='image/png,image/jpeg,image/jpg' class="upload-hidden" id="ex_file">
+                <input class="upload-name" value="Select File" disabled="disabled">
                     <input type="number" name="color" placeholder="How Many Color ex) 8">
                     <input type="number" name="size" placeholder="Height ex) 50">
             </div>
             <button type="submit" class="btn blue">Convert</button>
-
         </form>
     </div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            var fileTarget = $('.upload-hidden');
+          
+              fileTarget.on('change', function(){
+                  if(window.FileReader){
+                      var filename = $(this)[0].files[0].name;
+                  } else {
+                      var filename = $(this).val().split('/').pop().split('\\').pop();
+                  }
+          
+                  $(this).siblings('.upload-name').val(filename);
+              });
+          }); 
+    </script>
 </body>
 </html>
