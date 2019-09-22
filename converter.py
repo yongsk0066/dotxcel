@@ -34,4 +34,4 @@ host_addr = "localhost"
 port_num = "8080"
 
 if __name__ == '__main__':
-    app.run(host=host_addr, port=port_num)
+    app.run()
