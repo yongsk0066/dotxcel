@@ -28,7 +28,9 @@ def post():
     os.remove(img_path)
 
     file_name = f"output.xlsx"
-    return send_file(file_name)
+    return send_file(file_name,
+                     attachment_filename='dotxcel.xlsx',
+                     as_attachment=True)
 
 host_addr = "localhost"
 port_num = "8080"
